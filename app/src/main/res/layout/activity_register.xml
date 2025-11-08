@@ -1,97 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E3F2FD"
-    tools:context=".MainActivity">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="24dp">
 
+        <!-- Logo tròn gradient -->
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="App logo"
+            android:padding="20dp"
+            android:background="@drawable/logo_circle_bg"/>
+
+        <!-- Tiêu đề -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng Ký"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#0095f0"
+            android:textColor="#0277BD"
             android:layout_marginBottom="24dp"/>
 
+        <!-- Email -->
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:drawablePadding="10dp"
+            android:background="@drawable/edittext_rounded_bg"/>
 
+        <!-- Mật khẩu -->
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:hint="Mật khẩu"
             android:inputType="textPassword"
-            android:layout_marginTop="8dp"/>
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:drawableStart="@android:drawable/ic_lock_lock"
+            android:drawablePadding="10dp"
+            android:background="@drawable/edittext_rounded_bg"/>
 
+        <!-- Xác nhận mật khẩu -->
         <EditText
             android:id="@+id/etConfirmPassword"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="52dp"
             android:hint="Xác nhận mật khẩu"
             android:inputType="textPassword"
-            android:layout_marginTop="8dp"/>
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:drawableStart="@android:drawable/ic_lock_lock"
+            android:drawablePadding="10dp"
+            android:background="@drawable/edittext_rounded_bg"/>
 
-        <Button
+        <!-- Nút đăng ký gradient -->
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Đăng Ký"
-            android:backgroundTint="#21c5f0"
-            android:layout_marginTop="24dp"/>
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="20dp"
+            android:padding="14dp"
+            android:background="@drawable/btn_register_gradient"
+            android:backgroundTint="@null"/>
 
+        <!-- Thanh tải -->
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_marginTop="16dp"/>
+            android:visibility="gone"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="24dp">
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đã có tài khoản? "
                 android:textSize="16sp"
-                android:textColor="#616161"/>
+                android:textColor="#616161"
+                android:gravity="center_vertical"/>
 
             <TextView
                 android:id="@+id/tvGoToLogin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:text="Đăng nhập"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="#0095f0"
-                android:padding="8dp"
+                android:textColor="#0288D1"
+                android:gravity="center_vertical"
                 android:clickable="true"
-                android:focusable="true"
-                android:minHeight="48dp"
-                android:gravity="center_vertical"/>
+                android:focusable="true"/>
         </LinearLayout>
 
+
     </LinearLayout>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
