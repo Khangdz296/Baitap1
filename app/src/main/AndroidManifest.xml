@@ -37,6 +37,11 @@
             android:name=".ForgotPasswordActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".OTPActivity"
+            android:exported="true">
+        </activity>
+
 
     </application>
 
